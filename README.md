@@ -1,30 +1,55 @@
-# @pipeworx/mcp-trivia
+# mcp-trivia
 
-MCP server for trivia questions from [Open Trivia Database](https://opentdb.com/). Free, no auth required.
+Trivia MCP — wraps Open Trivia Database (free, no auth)
+
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 250+ live data sources.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `get_questions` | Fetch trivia questions with optional category, difficulty, and type filters |
-| `list_categories` | List all available trivia categories and their IDs |
-| `get_category_stats` | Get question counts for a specific category |
+| `list_categories` | List all available trivia categories and their IDs. |
 
-## Quickstart (Pipeworx Gateway)
+## Quick Start
 
-```bash
-curl -X POST https://gateway.pipeworx.io/mcp \
-  -H "Content-Type: application/json" \
-  -d '{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "tools/call",
-    "params": {
-      "name": "get_questions",
-      "arguments": { "amount": 5, "difficulty": "medium" }
+Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
+
+```json
+{
+  "mcpServers": {
+    "trivia": {
+      "url": "https://gateway.pipeworx.io/trivia/mcp"
     }
-  }'
+  }
+}
 ```
+
+Or connect to the full Pipeworx gateway for access to all 250+ data sources:
+
+```json
+{
+  "mcpServers": {
+    "pipeworx": {
+      "url": "https://gateway.pipeworx.io/mcp"
+    }
+  }
+}
+```
+
+## Using with ask_pipeworx
+
+Instead of calling tools directly, you can ask questions in plain English:
+
+```
+ask_pipeworx({ question: "your question about Trivia data" })
+```
+
+The gateway picks the right tool and fills the arguments automatically.
+
+## More
+
+- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [pipeworx.io](https://pipeworx.io)
 
 ## License
 
