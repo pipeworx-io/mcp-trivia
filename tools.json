@@ -1,0 +1,51 @@
+[
+  {
+    "name": "get_questions",
+    "description": "Get trivia questions from the Open Trivia Database. Optionally filter by category, difficulty, and question type.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "Number of questions to return. Defaults to 10. Max 50."
+        },
+        "category": {
+          "type": "number",
+          "description": "Category ID to filter by. Use list_categories to get available IDs."
+        },
+        "difficulty": {
+          "type": "string",
+          "description": "Difficulty level. One of: easy, medium, hard."
+        },
+        "type": {
+          "type": "string",
+          "description": "Question type. One of: multiple (multiple choice), boolean (true/false)."
+        }
+      }
+    }
+  },
+  {
+    "name": "list_categories",
+    "description": "List all available trivia categories and their IDs.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "get_category_stats",
+    "description": "Question inventory for one Open Trivia Database (opentdb.com) category, given the numeric category id from list_categories. Returns the total number of quiz questions in that category plus the easy, medium, and hard counts. Answers how many trivia questions the Open Trivia DB holds on a topic before requesting a quiz round of a given difficulty.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "number",
+          "description": "Category ID. Use list_categories to get available IDs."
+        }
+      },
+      "required": [
+        "category"
+      ]
+    }
+  }
+]

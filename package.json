@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-trivia",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Trivia MCP — wraps Open Trivia Database (free, no auth)",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-trivia": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "trivia"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-trivia.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/trivia",
   "pipeworx": {
-    "sourceHash": "v1-8e287030ec044f54723681d14faeeda4036296506cad2f601b4701c56cbea743",
-    "sourceCommit": "66a0692f029179984440cef6938cba7fdd41d66d"
+    "mode": "gateway",
+    "slug": "trivia",
+    "gatewaySlug": "trivia",
+    "sourceHash": "v1-9a332e86fd340ff662180056c410df9e3b93d6748280077c1c1c96c3f55e52d2",
+    "sourceCommit": "f47d581679e1e887373df51ba623f891fbe4c464"
   }
 }
