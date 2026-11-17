@@ -25,7 +25,7 @@
     }
   },
   {
-    "name": "list_categories",
+    "name": "trivia_list_categories",
     "description": "List all available trivia categories and their IDs.",
     "inputSchema": {
       "type": "object",

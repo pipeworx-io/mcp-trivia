@@ -1,15 +1,15 @@
 # mcp-trivia
 
-Trivia MCP — wraps Open Trivia Database (free, no auth)
+Unofficial Trivia MCP — wraps Open Trivia Database (free, no auth)
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1866+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 2007+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
 | `get_questions` | Get trivia questions from the Open Trivia Database. Optionally filter by category, difficulty, and question type. |
-| `list_categories` | List all available trivia categories and their IDs. |
+| `trivia_list_categories` | List all available trivia categories and their IDs. |
 | `get_category_stats` | Question inventory for one Open Trivia Database (opentdb.com) category, given the numeric category id from list_categories. Returns the total number of quiz questions in that category plus the easy, medium, and hard counts. Answers how many trivia questions the Open Trivia DB holds on a topic before requesting a quiz round of a given difficulty. |
 
 ## Quick Start
@@ -56,7 +56,7 @@ directly, instead of just this one's:
 }
 ```
 
-Both URLs reach the same gateway and the same 1866+ data sources. The
+Both URLs reach the same gateway and the same 2007+ data sources. The
 only difference is which pack's tools are listed **directly**; `ask_pipeworx`
 reaches all of them from either one.
 

@@ -1,7 +1,7 @@
 {
   "name": "@pipeworx/mcp-trivia",
-  "version": "1.1.1",
-  "description": "Trivia MCP — wraps Open Trivia Database (free, no auth)",
+  "version": "1.1.2",
+  "description": "Unofficial Trivia MCP — wraps Open Trivia Database (free, no auth)",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "trivia",
     "gatewaySlug": "trivia",
-    "sourceHash": "v1-0756084a0351f678e3982300b5ba5bc355d1fd419f60a2e2841d28b45dd4f1b4",
-    "sourceCommit": "868e119d526d5409447b7ee2149afba7eb9d2593"
+    "sourceHash": "v1-befdc90864885bc77434d29bc2f0013d39077e0d4484acb62b5b4a0e01368b6b",
+    "sourceCommit": "6e7ae693219a515a7ee6dd88d02390ab290fbad3"
   }
 }
